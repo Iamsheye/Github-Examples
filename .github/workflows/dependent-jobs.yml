@@ -18,9 +18,11 @@ jobs:
         run: echo "Job 2 successfully runs"
 
   job3:
-    runs-on: macos-latest
+    runs-on: windows-latest
     needs: [job1, job2]
     steps:
       - name: Job 3
-        shell: zsh
+        shell: cmd
         run: echo "Job 3 successfully runs"
+      - name: Log Runner
+        run: echo "Runner: ${{ toJson(runner) }}"
