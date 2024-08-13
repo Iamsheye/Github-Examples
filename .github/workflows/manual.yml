@@ -1,0 +1,16 @@
+name: "Manual Action Trigger"
+
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: ""
+                required: true
+                type: string
+
+jobs:
+    manual_jobs:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Echo
+          run: echo "Hi ${{ inputs.name }}, this job successfully runs"
